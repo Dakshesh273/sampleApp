@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Log In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="signinForm" class="ion-no-padding">
+    <ion-row>
+      <ion-col>
+        <ion-list>
+
+          <ion-item>
+            <ion-col class="ion-no-padding" size="3">
+              <ion-label floating>Email</ion-label>
+            </ion-col>
+            <ion-col>
+              <ion-input type="email" formControlName="email" required placeholder="Email">
+              </ion-input>
+            </ion-col>
+          </ion-item>
+
+          <ion-item>
+            <ion-col class="ion-no-padding" size="3">
+              <ion-label floating>Password</ion-label>
+            </ion-col>
+            <ion-col>
+              <ion-input type="password" background="light" formControlName="password" required
+                placeholder="Password">
+              </ion-input>
+            </ion-col>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button class="loginButtonClass" color="success" fill="solid" size="default" [disabled]="!signinForm.valid"
+          (click)="signIn()">
+          <ion-text>
+            <b>LOGIN</b>
+          </ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+</ion-content>

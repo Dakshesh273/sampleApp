@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add User</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="userForm" class="ion-no-padding">
+    <ion-row>
+      <ion-col>
+        <ion-list>
+
+          <ion-item>
+            <ion-col class="ion-no-padding" size="3">
+              <ion-label floating>First Name</ion-label>
+            </ion-col>
+            <ion-col>
+              <ion-input type="text" background="light" formControlName="firstName" required
+                placeholder="First Name">
+              </ion-input>
+            </ion-col>
+          </ion-item>
+
+          <ion-item>
+            <ion-col class="ion-no-padding" size="3">
+              <ion-label floating>Last Name</ion-label>
+            </ion-col>
+            <ion-col>
+              <ion-input type="text" background="light" formControlName="lastName" required
+                placeholder="Last Name">
+              </ion-input>
+            </ion-col>
+          </ion-item>
+
+          <ion-item>
+            <ion-col class="ion-no-padding" size="3">
+              <ion-label floating>Email</ion-label>
+            </ion-col>
+            <ion-col>
+              <ion-input type="email" formControlName="email" required placeholder="Email">
+              </ion-input>
+            </ion-col>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button color="success" fill="solid" size="default" [disabled]="!userForm.valid"
+          (click)="addUser()">
+          <ion-text>
+            <b>Add User</b>
+          </ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+</ion-content>
